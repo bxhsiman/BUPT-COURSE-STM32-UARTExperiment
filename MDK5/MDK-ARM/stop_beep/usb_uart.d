@@ -1,0 +1,46 @@
+stop_beep\usb_uart.o: ..\Core\Src\usb_uart.c
+stop_beep\usb_uart.o: ../USB_DEVICE/App/usbd_cdc_if.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+stop_beep\usb_uart.o: ../USB_DEVICE/Target/usbd_conf.h
+stop_beep\usb_uart.o: C:\Program Files (x86)\keil5\ARM\ARMCC\Bin\..\include\stdio.h
+stop_beep\usb_uart.o: C:\Program Files (x86)\keil5\ARM\ARMCC\Bin\..\include\stdlib.h
+stop_beep\usb_uart.o: C:\Program Files (x86)\keil5\ARM\ARMCC\Bin\..\include\string.h
+stop_beep\usb_uart.o: ../Core/Inc/main.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+stop_beep\usb_uart.o: ../Core/Inc/stm32f1xx_hal_conf.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Include/core_cm3.h
+stop_beep\usb_uart.o: C:\Program Files (x86)\keil5\ARM\ARMCC\Bin\..\include\stdint.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Include/cmsis_version.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Include/cmsis_compiler.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Include/cmsis_armcc.h
+stop_beep\usb_uart.o: ../Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h
+stop_beep\usb_uart.o: C:\Program Files (x86)\keil5\ARM\ARMCC\Bin\..\include\stddef.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h
+stop_beep\usb_uart.o: ../Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h
+stop_beep\usb_uart.o: ../Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+stop_beep\usb_uart.o: ../Core/Inc/usb_uart.h
+stop_beep\usb_uart.o: ../Core/Inc/uart_dma.h
