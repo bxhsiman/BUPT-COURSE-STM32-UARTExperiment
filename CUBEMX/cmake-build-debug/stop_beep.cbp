@@ -1,0 +1,477 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CodeBlocks_project_file>
+	<FileVersion major="1" minor="6"/>
+	<Project>
+		<Option title="stop_beep"/>
+		<Option makefile_is_custom="1"/>
+		<Option compiler="gcc"/>
+		<Option virtualFolders="CMake Files\;"/>
+		<Build>
+			<Target title="all">
+				<Option working_dir="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 all"/>
+					<CompileFile command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stop_beep.elf">
+				<Option output="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/stop_beep.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F103xB"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/Target"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 stop_beep.elf"/>
+					<CompileFile command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="stop_beep.elf/fast">
+				<Option output="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/stop_beep.elf" prefix_auto="0" extension_auto="0"/>
+				<Option working_dir="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug"/>
+				<Option object_output="./"/>
+				<Option type="1"/>
+				<Option compiler="gcc"/>
+				<Compiler>
+					<Add option="-DDEBUG"/>
+					<Add option="-DUSE_HAL_DRIVER"/>
+					<Add option="-DSTM32F103xB"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/Target"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include"/>
+					<Add directory="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/arm-none-eabi"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include/c++/10.3.1/backward"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/include-fixed"/>
+					<Add directory="c:\coding\c\gcc-arm-none-eabi-10.3-2021.10\bin\../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/include"/>
+				</Compiler>
+				<MakeCommands>
+					<Build command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 stop_beep.elf/fast"/>
+					<CompileFile command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="edit_cache">
+				<Option working_dir="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 edit_cache"/>
+					<CompileFile command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+			<Target title="rebuild_cache">
+				<Option working_dir="C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug"/>
+				<Option type="4"/>
+				<MakeCommands>
+					<Build command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 rebuild_cache"/>
+					<CompileFile command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 &quot;$file&quot;"/>
+					<Clean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+					<DistClean command="C:/Users/17437/AppData/Local/JetBrains/Toolbox/apps/CLion/ch-0/223.8617.54/bin/mingw/bin/mingw32-make.exe -f &quot;C:/Users/17437/Desktop/stop_beep/CUBEMX/cmake-build-debug/Makefile&quot;  VERBOSE=1 clean"/>
+				</MakeCommands>
+			</Target>
+		</Build>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/common.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/dma.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/gpio.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/main.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/music.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/stm32f1xx_hal_conf.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/stm32f1xx_it.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/stop_watch.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/tim.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/timer.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/uart_dma.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/usart.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Inc/usb_uart.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/common.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/dma.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/gpio.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/main.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/music.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/stm32f1xx_hal_msp.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/stm32f1xx_it.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/stop_watch.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/syscalls.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/sysmem.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/system_stm32f1xx.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/tim.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/timer.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/uart_dma.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/usart.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Src/usb_uart.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Core/Startup/startup_stm32f103cbtx.s">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f1xx.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/Include/system_stm32f1xx.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Device/ST/STM32F1xx/License.md">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_armcc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_armclang.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_compiler.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_gcc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_iccarm.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/cmsis_version.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_armv8mbl.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_armv8mml.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm0.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm0plus.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm1.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm23.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm3.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm33.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm4.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_cm7.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_sc000.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/core_sc300.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/mpu_armv7.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/mpu_armv8.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/Include/tz_context.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/CMSIS/LICENSE.txt">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/Legacy/stm32_hal_legacy.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_exti.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_flash_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pwr.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_rcc_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_bus.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_cortex.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_dma.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_exti.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_gpio.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_pwr.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_rcc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_system.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_tim.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usart.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_usb.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_ll_utils.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/License.md">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_cortex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_dma.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_exti.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_flash_ex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_gpio_ex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pcd_ex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_pwr.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_rcc_ex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_uart.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_ll_usb.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Inc/usbd_cdc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Class/CDC/Src/usbd_cdc.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usb_device.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usb_device.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usbd_cdc_if.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usbd_cdc_if.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usbd_desc.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usbd_desc.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/Target/usbd_conf.c">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/Target/usbd_conf.h">
+			<Option target="stop_beep.elf"/>
+		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/CMakeLists.txt">
+			<Option virtualFolder="CMake Files\"/>
+		</Unit>
+	</Project>
+</CodeBlocks_project_file>

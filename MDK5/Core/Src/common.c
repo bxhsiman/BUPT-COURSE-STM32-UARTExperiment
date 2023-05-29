@@ -13,8 +13,8 @@
 
 extern uint8_t g_stopwatch_flag ;
 extern uint8_t g_music_flag ;
-uint8_t RXtimerFlag;
-uint32_t settime[3];
+
+
 uint8_t uart1_busy = 0 ;
 
 UART_HandleTypeDef * g_user_uart = &huart1;
@@ -43,38 +43,36 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
+void SetTime(uint32_t *settime)
+{
+    if (settime[0] > 24 || settime[1] > 59 || settime[2] > 59) {
+        printf("非法传入");
+        return;
+    }
+    hours = settime[0];
+    minutes = settime[1];
+    seconds = settime[2];
+}
 
 void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
 {
 		uint8_t i ;
-		extern uint32_t settime[3];
-		;
+		uint32_t settime[3];
+
 		if ( ( len >= 3 ) && (strncmp( buf , "SET_TIME " , 9 ) == 0) )
 		{
 			
-			if( len < 14 ) return ;
-			//for ( i = 0 ; i < 6 ; i ++ )
-				//{
-					//if ( buf[i+3] < '0' || buf[i+3] > '9' ) return ;					
-				//}
-				//h= (buf[7]-'0' )*10+(buf[8]-'0' );
-				//m= (buf[5]-'0' )*10+(buf[6]-'0' );
-				//s= (buf[3]-'0' )*10+(buf[4]-'0' );
-				//if ( h > 23 || m > 59 || s >59 ) return;
-				//hours = h ;
-				//minutes = m ; 
-				//seconds = s; 
+			if( len < 14 ) return
 			
 			sscanf( buf ,"SET_TIME %d:%d:%d",settime,settime+1,settime+2);
-			
-			RXtimerFlag = 1;
+            SetTime(settime);
 		}
 		if ( ( len >= 5 ) && (strncmp( buf , "RESET" , 5 ) == 0) )
 		{
 			for (int i = 0 ; i < 2 ; i++){
 				   settime[i] = 0;
 			}
-			RXtimerFlag = 1;
+
 			__set_FAULTMASK(1);
 			NVIC_SystemReset();
 		
@@ -87,14 +85,11 @@ uint8_t g_uart_rx_buf[32] ;
 void System_Init( void )
 {
 
-	printf("Start all UARTS DMA receive ...\n");
-
-	//UartTxDataDMA(1, "Start all UARTS DMA receive ...\n" , strlen("Start all UARTS DMA receive ...\n"));	
 	HAL_TIM_Base_Start_IT( &htim1 );
 	HAL_TIM_Base_Start_IT( &htim3 );
-	StartAllUartDMAReceive();
-  //UartTxDataDMA(1, "Start all UARTS DMA receive !...\n" , strlen("Start all UARTS DMA receive ...\n"));	
-	//HAL_UART_Transmit_IT( g_user_uart , "Start all UARTS IT receive 1...\n" , strlen("Start all UARTS DMA receive ...\n"));
+
+    StartAllUartDMAReceive();
+
 }
 
 

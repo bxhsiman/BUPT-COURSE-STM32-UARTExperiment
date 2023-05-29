@@ -63,7 +63,7 @@ void Uart_DMA_Init( const uart_map_t * uart_map)
 	g_uart_dma[ i ].TxCallback = uart_map->TxCallback ;
 	
 	
-	__HAL_UART_ENABLE_IT( uart_map->huart , UART_IT_IDLE);    //Ê¹ÄÜ¿ÕÏÐÖÕÖÐ¶Ï
+	__HAL_UART_ENABLE_IT( uart_map->huart , UART_IT_IDLE);    //Ê¹ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 	if ( uart_map->hdma_rx != NULL )
 	{
 		HAL_UART_Receive_DMA( uart_map->huart , 
@@ -291,7 +291,7 @@ void StopAllUart( void )
 			{
           HAL_UART_EndRxTransfer_IT( g_uart_dma[ index ].huart );			
 			}
-    	__HAL_UART_DISABLE_IT( g_uart_dma[ index ].huart , UART_IT_IDLE);    //Ê¹ÄÜ¿ÕÏÐÖÕÖÐ¶Ï
+    	__HAL_UART_DISABLE_IT( g_uart_dma[ index ].huart , UART_IT_IDLE);    //Ê¹ï¿½Ü¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 			HAL_UART_DeInit( g_uart_dma[ index ].huart ) ;
 		}
 	}
@@ -306,7 +306,7 @@ __weak void UartRxDataCallback( uint8_t * buf , uint32_t len )
 void CheckUartRxData( void )
 {
 	//static uint8_t rx_buf[ UART_RX_BUF_SIZE + 1 ] ;
-  uint8_t * rx_buf ;
+    uint8_t * rx_buf ;
 	int32_t len ;
 	
 	int32_t i ;

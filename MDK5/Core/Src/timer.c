@@ -7,24 +7,16 @@ extern uint8_t  g_music_enable ;
 extern uint8_t g_stopwatch_flag ;
 extern const uint8_t  g_seg7_coder[11] ;
 extern const uint32_t g_seg7_enable[6] ;
-extern uint8_t RXtimerFlag;
-extern uint32_t settime[3];
+
+
+
 
 uint8_t  g_timer_showbuf[6] = { 0,0,0,0,0,0 };
 
 
 
-void RXtimer_process(void)
-{
-	if (!RXtimerFlag) return;
-	if (settime[0] > 24 || settime[1] > 59 || settime[2] > 59){
-		return ;
-	}
-	hours = settime[0];
-	minutes = settime[1];
-	seconds = settime[2];
-	RXtimerFlag = 0;
-}
+
+
 void timer_process( void )
 {
 	static uint16_t i = 0  ;
