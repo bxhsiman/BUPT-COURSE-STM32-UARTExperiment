@@ -62,10 +62,10 @@ void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
 		if ( ( len >= 3 ) && (strncmp( buf , "SET_TIME " , 9 ) == 0) )
 		{
 			
-			if( len < 14 ) return
+			if( len < 14 ) return;
 			
 			sscanf( buf ,"SET_TIME %d:%d:%d",settime,settime+1,settime+2);
-            SetTime(settime);
+      SetTime(settime);
 		}
 		if ( ( len >= 5 ) && (strncmp( buf , "RESET" , 5 ) == 0) )
 		{
@@ -88,7 +88,7 @@ void System_Init( void )
 	HAL_TIM_Base_Start_IT( &htim1 );
 	HAL_TIM_Base_Start_IT( &htim3 );
 
-    StartAllUartDMAReceive();
+   StartAllUartDMAReceive();
 
 }
 
@@ -99,7 +99,6 @@ void UserTasks( void)
 //	stop_watch_show( );
 //	music_process();
 	
-	RXtimer_process();
 	
 	timer_process();
 	
@@ -108,8 +107,8 @@ void UserTasks( void)
 	CheckUartRxData();
 
 	CheckUartTxData();
-
 	
+
 	
 //	CheckUSBRxData();
 //	CheckUSBTxData();
