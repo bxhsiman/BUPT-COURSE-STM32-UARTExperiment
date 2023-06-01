@@ -101,7 +101,7 @@ int main(void)
 
   /* Infinite loop */
   /* USER CODE BEGIN WHILE */
-  System_Init();
+	System_Init();
   while (1)
   {
 		UserTasks();

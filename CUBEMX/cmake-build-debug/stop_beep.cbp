@@ -446,6 +446,9 @@
 		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c">
 			<Option target="stop_beep.elf"/>
 		</Unit>
+		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/STM32F103CBTX_FLASH.ld">
+			<Option target="stop_beep.elf"/>
+		</Unit>
 		<Unit filename="C:/Users/17437/Desktop/stop_beep/CUBEMX/USB_DEVICE/App/usb_device.c">
 			<Option target="stop_beep.elf"/>
 		</Unit>

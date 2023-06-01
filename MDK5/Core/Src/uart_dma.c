@@ -7,6 +7,7 @@
 // uart3 user uart
 
 void Uart1_RxDataCallback( uint8_t * buf , uint32_t len );
+void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len );
 
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
@@ -17,7 +18,7 @@ uart_dma_t g_uart_dma[ MAX_UART_DMA_NUM ] ;
 uint8_t g_active_uart_num = 0 ;
 
 const uart_map_t g_uart_port_map[ MAX_UART_PORT_NUM ] = { 
-	{1,&huart1,&hdma_usart1_rx,&hdma_usart1_tx, &Uart1_RxDataCallback , 0} ,
+	{1,&huart1,&hdma_usart1_rx,&hdma_usart1_tx, &Uart1_RxDataCallback_ToUSB , 0} ,
 	{0,0,0,0,0,0} ,
 	{0,0,0,0,0,0} ,
 	{0,0,0,0,0,0} ,
@@ -250,7 +251,7 @@ void UartTxDataDMA( uint32_t port , uint8_t * buf , uint32_t len )
 
 	memcpy( g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_tail ] , buf , len );	
 	g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_tail ] =  len ;              
-	
+	printf("dma: %d head %d tail %d \n",i,g_uart_dma[ i ].tx_buf_head, g_uart_dma[ i ].tx_buf_tail);
 	if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )
 		g_uart_dma[ i ].tx_buf_tail = 0 ;
 	else
@@ -340,20 +341,28 @@ void CheckUartTxData( void )
 	int32_t len ;
 	
 	int32_t i ;
+	
  	for ( i = 0 ; i < g_active_uart_num ; i++ )
 	{
-		if ( g_uart_dma[ i ].tx_busy == 1 ) continue ;
+
+		
+		if ( g_uart_dma[ i ].tx_busy == 1 )  {printf("UART BUSY"); continue ;}
 		if ( g_uart_dma[ i ].tx_buf_full == 1 )
 		{
 			printf("Uart Tx overflow!\n");
 		}
 		if ( g_uart_dma[ i ].tx_buf_full == 1 || 
 				g_uart_dma[ i ].tx_buf_head != g_uart_dma[ i ].tx_buf_tail  )
-		{				
+		{		
 			len = g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_head ] ;
 			tx_buf = g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_head ] ;
 			HAL_UART_Transmit_DMA(g_uart_dma[ i ].huart , tx_buf , len );
-			g_uart_dma[ i ].tx_busy = 1 ;			
+			//g_uart_dma[ i ].tx_busy = 1 ;
+			if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )
+				g_uart_dma[ i ].tx_buf_tail = 0 ;
+			else
+				g_uart_dma[ i ].tx_buf_tail ++ ;
+			g_uart_dma[ i ].tx_buf_full = 0;
 		}			
 	}
 

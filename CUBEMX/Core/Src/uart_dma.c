@@ -6,18 +6,20 @@
 // uart4 wifi uart1
 // uart3 user uart
 
+/*声明回调*/
 void Uart1_RxDataCallback( uint8_t * buf , uint32_t len );
+void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len );
 
 extern DMA_HandleTypeDef hdma_usart1_rx;
 extern DMA_HandleTypeDef hdma_usart1_tx;
 //extern DMA_HandleTypeDef hdma_uart7_rx;
 
-uart_dma_t g_uart_dma[ MAX_UART_DMA_NUM ] ;
+uart_dma_t g_uart_dma[ MAX_UART_DMA_NUM ] ;                 //创建dma缓冲区
 
 uint8_t g_active_uart_num = 0 ;
 
-const uart_map_t g_uart_port_map[ MAX_UART_PORT_NUM ] = { 
-	{1,&huart1,&hdma_usart1_rx,&hdma_usart1_tx, &Uart1_RxDataCallback , 0} ,
+const uart_map_t g_uart_port_map[ MAX_UART_PORT_NUM ] = {  //创建UART接口表
+	{1,&huart1,&hdma_usart1_rx,&hdma_usart1_tx, &Uart1_RxDataCallback_ToUSB , 0} ,
 	{0,0,0,0,0,0} ,
 	{0,0,0,0,0,0} ,
 	{0,0,0,0,0,0} ,
@@ -37,17 +39,16 @@ void HAL_UART_EndRxTransfer_IT(UART_HandleTypeDef *huart)
   huart->RxState = HAL_UART_STATE_READY;
 }
 
-void Uart_DMA_Init( const uart_map_t * uart_map)
-{
+void Uart_DMA_Init( const uart_map_t * uart_map){ // 初始化UART DMA
 	
 	uint32_t i ;
 	 
-	i = uart_map->index - 1 ;
+	i = uart_map->index - 1 ;                    //index是从1开始的
 	
-	if ( i >= MAX_UART_DMA_NUM ) return ;
+	if ( i >= MAX_UART_DMA_NUM ) return ;        //index超出uartr dma最大数量
 	
-	HAL_UART_Init( uart_map->huart ) ;
-
+	HAL_UART_Init( uart_map->huart ) ;           //uart初始化
+    /*dma初始化区 将uartmap中配置映射到dma*/
 	g_uart_dma[ i ].huart       = uart_map->huart ;
 	g_uart_dma[ i ].hdma_rx     = uart_map->hdma_rx ;	
 	g_uart_dma[ i ].rx_buf_head = 0 ;
@@ -63,14 +64,14 @@ void Uart_DMA_Init( const uart_map_t * uart_map)
 	g_uart_dma[ i ].TxCallback = uart_map->TxCallback ;
 	
 	
-	__HAL_UART_ENABLE_IT( uart_map->huart , UART_IT_IDLE);    //ʹ�ܿ������ж�
-	if ( uart_map->hdma_rx != NULL )
+	__HAL_UART_ENABLE_IT( uart_map->huart , UART_IT_IDLE);    //使能IDLE中断
+	if ( uart_map->hdma_rx != NULL )                          //使能DMA接收
 	{
 		HAL_UART_Receive_DMA( uart_map->huart , 
 													( uint8_t *)g_uart_dma[ i ].uart_rx_buf[ 0 ] ,
 													UART_RX_BUF_SIZE );
 	}
-	else
+	else                                                     //使能能中断接收
 	{
 		HAL_UART_Receive_IT( uart_map->huart , 
 													( uint8_t *)g_uart_dma[ i ].uart_rx_buf[ 0 ] ,
@@ -238,30 +239,36 @@ void HAL_UART_TxCpltCallback(UART_HandleTypeDef *huart)
 }
 */
 
-void UartTxDataDMA( uint32_t port , uint8_t * buf , uint32_t len )
+/*UART Tx DMA缓冲区生产函数*/
+void UartTxDataDMA( uint32_t port , uint8_t * buf , uint32_t len ) //
 {
 	uint32_t i ;
+    /*参数合法性检查*/
 	if ( len > UART_TX_BUF_SIZE ) return ;
 	if ( port > MAX_UART_PORT_NUM || port == 0 ) return ;
-	
+
+    /*索引规范化*/
 	i = g_uart_port_map[port-1].index ;	
 	if ( i == 0 ) return ;
 	i = i - 1 ;
 
-	memcpy( g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_tail ] , buf , len );	
-	g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_tail ] =  len ;              
-	
-	if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )
+    /*DMA 缓冲块写入操作*/
+	memcpy( g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_tail ] , buf , len ); //将buffer放入缓冲块队列队尾缓冲块
+	g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_tail ] =  len ;               //将该块数据长度记录到表
+	//printf("dma: %d head %d tail %d \n",i,g_uart_dma[ i ].tx_buf_head, g_uart_dma[ i ].tx_buf_tail);
+	/*缓冲块队列操作*/
+    if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )                    //检查是否到达缓冲区尾 进行循环覆写
 		g_uart_dma[ i ].tx_buf_tail = 0 ;
 	else
-		g_uart_dma[ i ].tx_buf_tail ++ ;
+		g_uart_dma[ i ].tx_buf_tail ++ ;                                              //队尾移动
 	
 	if ( g_uart_dma[ i ].tx_buf_tail == g_uart_dma[ i ].tx_buf_head ) 
 	{
-		g_uart_dma[ i ].tx_buf_full = 1 ;
+		g_uart_dma[ i ].tx_buf_full = 1 ;                                            //如果队尾和队头相等 则说明缓冲队列满了
 	}
 }
 
+/*UART DMA 启动函数*/
 void StartAllUartDMAReceive( )
 {
 	uint32_t i ;
@@ -291,7 +298,7 @@ void StopAllUart( void )
 			{
           HAL_UART_EndRxTransfer_IT( g_uart_dma[ index ].huart );			
 			}
-    	__HAL_UART_DISABLE_IT( g_uart_dma[ index ].huart , UART_IT_IDLE);    //ʹ�ܿ������ж�
+    	__HAL_UART_DISABLE_IT( g_uart_dma[ index ].huart , UART_IT_IDLE);    //ʹ�ܿ������ж�
 			HAL_UART_DeInit( g_uart_dma[ index ].huart ) ;
 		}
 	}
@@ -302,11 +309,11 @@ __weak void UartRxDataCallback( uint8_t * buf , uint32_t len )
 	UNUSED(buf);
 	UNUSED(len);
 }
-
+/*UART Rx DMA缓冲区消费函数*/
 void CheckUartRxData( void )
 {
 	//static uint8_t rx_buf[ UART_RX_BUF_SIZE + 1 ] ;
-  uint8_t * rx_buf ;
+    uint8_t * rx_buf ;
 	int32_t len ;
 	
 	int32_t i ;
@@ -332,28 +339,35 @@ void CheckUartRxData( void )
 	}
 
 }
-
+/*UART Tx DMA缓冲区消费函数*/
 void CheckUartTxData( void )
 {
-	//static uint8_t rx_buf[ UART_RX_BUF_SIZE + 1 ] ;
-  uint8_t * tx_buf ;
-	int32_t len ;
-	
-	int32_t i ;
+    //static uint8_t rx_buf[ UART_RX_BUF_SIZE + 1 ] ;
+    uint8_t * tx_buf ;
+    int32_t len ;
+    int32_t i ;
+
  	for ( i = 0 ; i < g_active_uart_num ; i++ )
 	{
-		if ( g_uart_dma[ i ].tx_busy == 1 ) continue ;
-		if ( g_uart_dma[ i ].tx_buf_full == 1 )
+		// if ( g_uart_dma[ i ].tx_busy == 1 ) continue; //检查发送是否忙
+		if ( g_uart_dma[ i ].tx_buf_full == 1 )         //检查Tx缓冲区是否满
 		{
 			printf("Uart Tx overflow!\n");
 		}
+        /*缓冲块队列出队操作(消费)*/
 		if ( g_uart_dma[ i ].tx_buf_full == 1 || 
-				g_uart_dma[ i ].tx_buf_head != g_uart_dma[ i ].tx_buf_tail  )
-		{				
-			len = g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_head ] ;
+				g_uart_dma[ i ].tx_buf_head != g_uart_dma[ i ].tx_buf_tail  ) //块队列满或块队列不空
+		{
+
+			len = g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_head ] ; //取出对应块头指针与长度
 			tx_buf = g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_head ] ;
-			HAL_UART_Transmit_DMA(g_uart_dma[ i ].huart , tx_buf , len );
-			g_uart_dma[ i ].tx_busy = 1 ;			
+			HAL_UART_Transmit_DMA(g_uart_dma[ i ].huart , tx_buf , len );//发送数据
+			//g_uart_dma[ i ].tx_busy = 1 ;
+			if ( g_uart_dma[ i ].tx_buf_head == ( MAX_UART_BUF_NUM - 1 ) ) //当头到队列尾部 则从头开始处理
+				g_uart_dma[ i ].tx_buf_head = 0 ;
+			else
+				g_uart_dma[ i ].tx_buf_head ++ ;                           //开始处理下一个buffer块
+			g_uart_dma[ i ].tx_buf_full = 0;                               //清除该块满标志
 		}			
 	}
 

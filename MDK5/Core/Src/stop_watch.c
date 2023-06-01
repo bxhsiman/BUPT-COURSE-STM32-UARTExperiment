@@ -3,9 +3,9 @@
 
 extern uint8_t g_music_flag ;
 
-uint8_t g_stopwatch_flag = 0 ;
-uint32_t g_stopwatch_counter = 0 ;
-uint8_t  g_stopwatch_showbuf[6] = { 0,0,0,0,0,0 };
+__IO uint8_t g_stopwatch_flag = 0 ;
+__IO uint32_t g_stopwatch_counter = 0 ;
+__IO uint8_t  g_stopwatch_showbuf[6] = { 0,0,0,0,0,0 };
 
 const uint8_t  g_seg7_coder[11] = { 0xFC, 0x60, 0xDA, 0xF2, 0x66, 0xB6, 0xBE, 0xE0, 0xFE, 0xF6 };
 const uint32_t g_seg7_weight[6] = { 100000, 10000, 1000, 100, 10, 1 };

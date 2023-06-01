@@ -46,7 +46,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 void SetTime(uint32_t *settime)
 {
     if (settime[0] > 24 || settime[1] > 59 || settime[2] > 59) {
-        printf("非法传入");
+        printf("Value Error!\n");
         return;
     }
     hours = settime[0];
@@ -82,13 +82,19 @@ void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
 
 uint8_t g_uart_rx_buf[32] ;
 //////////////////////////////////////////////////////////////////
+void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len ){
+	USBTxDataDMA( buf, len);
+}
+
+//////////////////////////////////////////////////////////////////
 void System_Init( void )
 {
 
 	HAL_TIM_Base_Start_IT( &htim1 );
 	HAL_TIM_Base_Start_IT( &htim3 );
 
-   StartAllUartDMAReceive();
+    StartAllUartDMAReceive();
+    Usb2UartInit();
 
 }
 
@@ -100,14 +106,15 @@ void UserTasks( void)
 //	music_process();
 	
 	
-	timer_process();
+		//timer_process();
 	
-	timer_show();
+		//timer_show();
 
-	CheckUartRxData();
-
-	CheckUartTxData();
-	
+		CheckUartRxData();
+		CheckUSBTxData();
+    CheckUSBRxData();
+		CheckUartTxData();
+    
 
 	
 //	CheckUSBRxData();

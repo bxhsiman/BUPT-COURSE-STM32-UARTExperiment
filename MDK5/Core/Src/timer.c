@@ -26,7 +26,7 @@ void timer_process( void )
 		i ++;
 		if ( i == 1000 ) 
 		{
-			printf("The Time Is %d:%d:%d\n",hours,minutes,seconds);
+			//printf("The Time Is %d:%d:%d\n",hours,minutes,seconds);
 			if ( seconds == 59 )
 			{
 				seconds = 0 ;

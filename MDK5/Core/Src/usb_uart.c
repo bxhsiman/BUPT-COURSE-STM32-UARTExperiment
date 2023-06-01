@@ -18,7 +18,7 @@ void Usb2UartInit( void )
 	g_usb_buf.tx_busy = 0 ;
 	
 	USBD_CDC_SetRxBuffer(&hUsbDeviceFS, (uint8_t *)g_usb_buf.usb_rx_buf[ g_usb_buf.rx_buf_tail ] );
-//  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
+  USBD_CDC_ReceivePacket(&hUsbDeviceFS);
 }
 
 void RcvDataFromUSB( uint8_t* Buf, uint32_t Len )
@@ -74,7 +74,8 @@ void SendDataToUSB( uint8_t* Buf, uint32_t Len )
 }
 
 void CheckUSBRxData( void )
-{	
+{
+   
 	while ( g_usb_buf.rx_buf_full == 1 || 
 			 g_usb_buf.rx_buf_head != g_usb_buf.rx_buf_tail  )
 	{
@@ -89,6 +90,7 @@ void CheckUSBRxData( void )
 
 void CheckUSBTxData( void )
 {
+   
 	//static uint8_t rx_buf[ UART_RX_BUF_SIZE + 1 ] ;
   uint8_t * tx_buf ;
 	int32_t len ;
