@@ -11,7 +11,6 @@
 #include "common.h"
 #include "timer.h"
 
-
 extern uint8_t g_stopwatch_flag ;
 extern uint8_t g_music_flag ;
 
@@ -20,10 +19,10 @@ uint8_t uart1_busy = 0 ;
 
 UART_HandleTypeDef * g_user_uart = &huart1;
 
-int fputc(int ch,FILE *p)
+int fputc(int ch,FILE *p) 
 {
-    HAL_UART_Transmit( g_user_uart, (uint8_t *)&ch, 1, 10 );
-    return ch ;
+	HAL_UART_Transmit( g_user_uart, (uint8_t *)&ch, 1, 10 );
+	return ch ;
 }
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
@@ -44,7 +43,6 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 }
 
 //////////////////////////////////////////////////////////////////////////////////////////////
-/*uart修改时间模块*/
 void SetTime(uint32_t *settime)
 {
     if (settime[0] > 24 || settime[1] > 59 || settime[2] > 59) {
@@ -56,9 +54,8 @@ void SetTime(uint32_t *settime)
     seconds = settime[2];
 }
 
-
 void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
-{ // 修改时间回调
+{
 		uint8_t i ;
 		uint32_t settime[3];
 
@@ -81,38 +78,46 @@ void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
 		
 		}
 }
+
+
 uint8_t g_uart_rx_buf[32] ;
 //////////////////////////////////////////////////////////////////
-/*USB UART透传回调*/
-void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len ){ //透传
+void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len ){
 	USBTxDataDMA( buf, len);
 }
+
 //////////////////////////////////////////////////////////////////
-/*系统初始化*/
 void System_Init( void )
 {
 
 	HAL_TIM_Base_Start_IT( &htim1 );
 	HAL_TIM_Base_Start_IT( &htim3 );
+
     StartAllUartDMAReceive();
     Usb2UartInit();
 
 }
 
-//////////////////////////////////////////////////////////////////
-/*用户任务*/
+
 void UserTasks( void)
 {	
 //	stop_watch_process( );		
 //	stop_watch_show( );
 //	music_process();
-    timer_process();
-    timer_show();
+	
+	
+//timer_process();
+
+//timer_show();
+
     CheckUartRxData();
     CheckUSBTxData();
     CheckUSBRxData();
     CheckUartTxData();
+    
 
-
-
+	
+//	CheckUSBRxData();
+//	CheckUSBTxData();
+	
 }

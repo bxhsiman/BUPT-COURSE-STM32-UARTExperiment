@@ -80,6 +80,7 @@ void CheckUSBRxData(void) {
         g_usb_buf.rx_buf_full = 0;
     }
 }
+
 /*USBTx缓冲区消费函数*/
 void CheckUSBTxData(void) {
 

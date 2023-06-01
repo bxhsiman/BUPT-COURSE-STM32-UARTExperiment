@@ -8,7 +8,14 @@ extern uint8_t g_stopwatch_flag ;
 extern const uint8_t  g_seg7_coder[11] ;
 extern const uint32_t g_seg7_enable[6] ;
 
+
+
+
 uint8_t  g_timer_showbuf[6] = { 0,0,0,0,0,0 };
+
+
+
+
 
 void timer_process( void )
 {
@@ -56,7 +63,6 @@ void timer_process( void )
 }
 
 void seg7_enable( uint8_t en );
-
 void seg7_show( uint8_t show , uint8_t point );
 
 void timer_show( )

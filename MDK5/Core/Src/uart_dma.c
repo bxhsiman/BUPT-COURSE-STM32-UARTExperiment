@@ -251,7 +251,7 @@ void UartTxDataDMA( uint32_t port , uint8_t * buf , uint32_t len )
 
 	memcpy( g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_tail ] , buf , len );	
 	g_uart_dma[ i ].tx_buf_size[ g_uart_dma[ i ].tx_buf_tail ] =  len ;              
-	printf("dma: %d head %d tail %d \n",i,g_uart_dma[ i ].tx_buf_head, g_uart_dma[ i ].tx_buf_tail);
+	//printf("dma: %d head %d tail %d \n",i,g_uart_dma[ i ].tx_buf_head, g_uart_dma[ i ].tx_buf_tail);
 	if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )
 		g_uart_dma[ i ].tx_buf_tail = 0 ;
 	else
@@ -358,10 +358,10 @@ void CheckUartTxData( void )
 			tx_buf = g_uart_dma[ i ].uart_tx_buf[ g_uart_dma[ i ].tx_buf_head ] ;
 			HAL_UART_Transmit_DMA(g_uart_dma[ i ].huart , tx_buf , len );
 			//g_uart_dma[ i ].tx_busy = 1 ;
-			if ( g_uart_dma[ i ].tx_buf_tail == ( MAX_UART_BUF_NUM - 1 ) )
-				g_uart_dma[ i ].tx_buf_tail = 0 ;
+			if ( g_uart_dma[ i ].tx_buf_head == ( MAX_UART_BUF_NUM - 1 ) )
+				g_uart_dma[ i ].tx_buf_head = 0 ;
 			else
-				g_uart_dma[ i ].tx_buf_tail ++ ;
+				g_uart_dma[ i ].tx_buf_head ++ ;
 			g_uart_dma[ i ].tx_buf_full = 0;
 		}			
 	}
