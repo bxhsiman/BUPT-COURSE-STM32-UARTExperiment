@@ -2,6 +2,7 @@
 #include "main.h"
 #include "tim.h"
 uint8_t hours = 0, minutes = 0  , seconds = 0 ;
+uint8_t position = 0;
 
 extern uint8_t  g_music_enable ;
 extern uint8_t g_stopwatch_flag ;
@@ -54,8 +55,8 @@ void timer_process( void )
 			g_timer_showbuf[1] = (seconds / 10) ;
 			i = 0 ;
 			
-			if ( seconds < 10 && minutes == 0 ) g_music_enable = 1 ;
-			else g_music_enable = 0 ;
+			// if ( seconds < 10 && minutes == 0 ) g_music_enable = 1 ;
+			// else g_music_enable = 0 ;
 		}
 		g_stopwatch_flag = 0 ;
 		
@@ -67,16 +68,19 @@ void seg7_show( uint8_t show , uint8_t point );
 
 void timer_show( )
 {
-	uint8_t i ;
+	//uint8_t i ;
 	uint8_t show_char ;
 	
-	for ( i = 0 ; i < 6 ; i++ )
-	{
+	//for ( i = 0 ; i < 6 ; i++ )
+	//{
 		//seg7_enable( g_seg7_enable[i] );
-		show_char = g_seg7_coder[ g_timer_showbuf[i] ] ;
+		show_char = g_seg7_coder[ g_timer_showbuf[position] ] ;
 
 		seg7_enable( 0 );
 		seg7_show( show_char , 0x00 );
-		seg7_enable( g_seg7_enable[5-i] );
-	}
+		seg7_enable( g_seg7_enable[5-position] );
+
+		position ++ ;
+		if(position>5) position = 0 ;
+	//}
 }
