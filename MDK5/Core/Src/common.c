@@ -14,6 +14,8 @@
 extern uint8_t g_stopwatch_flag ;
 extern uint8_t g_music_flag ;
 
+uint32_t rxdatanum = 0;
+uint32_t uartrxdatanum = 0;
 
 uint8_t uart1_busy = 0 ;
 
@@ -83,6 +85,7 @@ void Uart1_RxDataCallback( uint8_t * buf , uint32_t len )
 uint8_t g_uart_rx_buf[32] ;
 //////////////////////////////////////////////////////////////////
 void Uart1_RxDataCallback_ToUSB( uint8_t * buf , uint32_t len ){
+	uartrxdatanum += len;
 	USBTxDataDMA( buf, len);
 }
 
@@ -106,14 +109,15 @@ void UserTasks( void)
 //	music_process();
 	
 	
-		//timer_process();
+		timer_process();
 	
-		//timer_show();
+		timer_show();
 
 		CheckUartRxData();
 		CheckUSBTxData();
-    CheckUSBRxData();
+    	CheckUSBRxData();
 		CheckUartTxData();
+		
     
 
 	

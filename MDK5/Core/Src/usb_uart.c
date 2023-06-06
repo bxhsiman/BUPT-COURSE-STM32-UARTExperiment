@@ -2,6 +2,8 @@
 #include "usb_uart.h"
 #include "uart_dma.h"
 
+
+extern uint32_t rxdatanum;
 extern USBD_HandleTypeDef hUsbDeviceFS;
 
 usb_buf_t g_usb_buf ;
@@ -79,6 +81,7 @@ void CheckUSBRxData( void )
 	while ( g_usb_buf.rx_buf_full == 1 || 
 			 g_usb_buf.rx_buf_head != g_usb_buf.rx_buf_tail  )
 	{
+		rxdatanum += g_usb_buf.rx_buf_size[g_usb_buf.rx_buf_head];
 		UartTxDataDMA( 1 , g_usb_buf.usb_rx_buf[ g_usb_buf.rx_buf_head ] , g_usb_buf.rx_buf_size[ g_usb_buf.rx_buf_head ]  );
 		if ( g_usb_buf.rx_buf_head == ( MAX_USB_BUF_NUM - 1 ) )
 			g_usb_buf.rx_buf_head = 0 ;

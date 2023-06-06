@@ -9,6 +9,8 @@ extern uint8_t g_stopwatch_flag ;
 extern const uint8_t  g_seg7_coder[11] ;
 extern const uint32_t g_seg7_enable[6] ;
 
+extern uint32_t rxdatanum;
+extern uint32_t uartrxdatanum;
 
 
 
@@ -27,7 +29,9 @@ void timer_process( void )
 		i ++;
 		if ( i == 1000 ) 
 		{
-			printf("The Time Is %d%d:%d%d:%d%d\n",g_timer_showbuf[5],g_timer_showbuf[4],g_timer_showbuf[3],g_timer_showbuf[2],g_timer_showbuf[1],g_timer_showbuf[0]);
+			//printf("The Time Is %d%d:%d%d:%d%d\n",g_timer_showbuf[5],g_timer_showbuf[4],g_timer_showbuf[3],g_timer_showbuf[2],g_timer_showbuf[1],g_timer_showbuf[0]);
+			printf("usb rxdata unm is %d \n", rxdatanum);
+			printf("uart rxdata num is %d\n",uartrxdatanum);
 			if ( seconds == 59 )
 			{
 				seconds = 0 ;
